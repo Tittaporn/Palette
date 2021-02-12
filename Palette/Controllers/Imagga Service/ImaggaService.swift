@@ -15,7 +15,7 @@ class ImaggaService {
     private init() {}
     
     static let baseURLPath = "http://api.imagga.com/v2"
-    static let authenticationToken = "Basic xxxx"
+    static let authenticationToken = "Basic YWNjXzI2YTI1YjBiMjg5YTMzODpmYjlkYmE2NTc4Y2U0NWYxYzhlYWM4Y2QxOGUwM2E0Nw=="
     
     func fetchColorsFor(imagePath: String, attempts: Int =  0, completion: @escaping ([UIColor]?) -> Void){
         guard let url = URL(string: ImaggaService.baseURLPath)?.appendingPathComponent("colors") else { completion(nil) ; return }
@@ -44,6 +44,6 @@ class ImaggaService {
                 print("There was as error in \(#function) :  \(error) \(error.localizedDescription)")
                 completion(nil)
             }
-            }.resume()
+        }.resume()
     }
 }
